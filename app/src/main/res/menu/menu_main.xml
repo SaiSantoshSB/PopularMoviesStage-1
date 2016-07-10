@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".PopularMovies">
+    <item
+        android:id="@+id/menuSortPopularity"
+        android:title="@string/sort_by_popularity" />
+    <item
+        android:id="@+id/menuSortRating"
+        android:title="@string/sort_by_rating" />
+</menu>
