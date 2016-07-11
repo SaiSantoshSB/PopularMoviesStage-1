@@ -1,5 +1,0 @@
-CHANGED,C:\Users\Srinivas\AndroidStudioProjects\PopularMovies\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\example\saisantosh\popularmovies\R$styleable$override.class
-CHANGED,C:\Users\Srinivas\AndroidStudioProjects\PopularMovies\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\example\saisantosh\popularmovies\R$style$override.class
-CHANGED,C:\Users\Srinivas\AndroidStudioProjects\PopularMovies\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\example\saisantosh\popularmovies\R$string$override.class
-CHANGED,C:\Users\Srinivas\AndroidStudioProjects\PopularMovies\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\android\tools\fd\runtime\AppPatchesLoaderImpl.class
-CHANGED,C:\Users\Srinivas\AndroidStudioProjects\PopularMovies\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\example\saisantosh\popularmovies\R$mipmap$override.class

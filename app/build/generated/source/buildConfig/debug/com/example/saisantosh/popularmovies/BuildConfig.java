@@ -11,5 +11,5 @@ public final class BuildConfig {
   public static final int VERSION_CODE = 1;
   public static final String VERSION_NAME = "1.0";
   // Fields from build type: debug
-  public static final String TMDB_MAP_API_KEY = "be4ba63ce3eb9dd4a979390cc6ab3a3b";
+  public static final String TMDB_MAP_API_KEY = "Your API Key";
 }
