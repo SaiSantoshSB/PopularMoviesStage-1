@@ -2,8 +2,6 @@ package com.example.saisantosh.popularmovies;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
-import android.os.Parcelable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,12 +10,8 @@ import android.widget.ImageView;
 
 import com.squareup.picasso.Picasso;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 
-/**
- * Created by sai.santosh on 19/06/16.
- */
 public class PopularMovieAdapter extends RecyclerView.Adapter<PopularMovieAdapter.ViewHolder> {
     private ArrayList<PopularMoviesApiData> data = new ArrayList<>();
     private Context context;
