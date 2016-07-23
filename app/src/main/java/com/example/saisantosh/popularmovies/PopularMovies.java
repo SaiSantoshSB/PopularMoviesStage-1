@@ -1,31 +1,84 @@
 package com.example.saisantosh.popularmovies;
 
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import java.util.ArrayList;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class PopularMovies extends AppCompatActivity {
-    ArrayList<PopularMoviesApiData> data = new ArrayList<>();
+    @BindView(R.id.movies_recycler_view)
     RecyclerView recyclerView;
-    ProgressDialog progress;
+    Context context = PopularMovies.this;
+    ApiInterface apiService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        recyclerView = (RecyclerView) findViewById(R.id.movies_recycler_view);
-        initViews();
+        ButterKnife.bind(this);
+        if (recyclerView != null) {
+            recyclerView.setHasFixedSize(true);
+            RecyclerView.LayoutManager layoutManager = new GridLayoutManager(context, 2);
+            recyclerView.setLayoutManager(layoutManager);
+        }
+        showPopularMovies();
     }
 
-    private void initViews() {
-        FetchMovieList fetchMovieList = new FetchMovieList(recyclerView, progress, PopularMovies.this, data);
-        fetchMovieList.execute(sortBy.POPULAR);
+    private void showTopRatedMovies() {
+        apiService = ApiClient.getClient().create(ApiInterface.class);
+
+        Call<PopularMoviesResponse> call = apiService.getTopRatedMovies(BuildConfig.TMDB_MAP_API_KEY);
+        call.enqueue(new Callback<PopularMoviesResponse>() {
+            @Override
+            public void onResponse(Call<PopularMoviesResponse> call, Response<PopularMoviesResponse> response) {
+                ArrayList<PopularMoviesApiData> movies = response.body().getResults();
+                Log.d("movies", "Number of movies received: " + movies.size());
+
+                PopularMovieAdapter movieAdapter = new PopularMovieAdapter(context, movies);
+                recyclerView.setAdapter(movieAdapter);
+
+            }
+
+            @Override
+            public void onFailure(Call<PopularMoviesResponse> call, Throwable t) {
+                // Log error here since request failed
+                Log.e("movies", t.toString());
+            }
+        });
+    }
+
+    private void showPopularMovies() {
+        apiService = ApiClient.getClient().create(ApiInterface.class);
+
+        Call<PopularMoviesResponse> call = apiService.getPopularMovies(BuildConfig.TMDB_MAP_API_KEY);
+        call.enqueue(new Callback<PopularMoviesResponse>() {
+            @Override
+            public void onResponse(Call<PopularMoviesResponse> call, Response<PopularMoviesResponse> response) {
+                ArrayList<PopularMoviesApiData> movies = response.body().getResults();
+                Log.d("movies", "Number of movies received: " + movies.size());
+
+                PopularMovieAdapter movieAdapter = new PopularMovieAdapter(context, movies);
+                recyclerView.setAdapter(movieAdapter);
+            }
+
+            @Override
+            public void onFailure(Call<PopularMoviesResponse> call, Throwable t) {
+                // Log error here since request failed
+                Log.e("movies", t.toString());
+            }
+        });
     }
 
     @Override
@@ -38,20 +91,14 @@ public class PopularMovies extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.menuSortPopularity:
-                FetchMovieList fetchMovieList_popular = new FetchMovieList(recyclerView, progress, PopularMovies.this, data);
-                fetchMovieList_popular.execute(sortBy.POPULAR);
+                showPopularMovies();
                 return true;
             case R.id.menuSortRating:
-                FetchMovieList fetchMovieList_rating = new FetchMovieList(recyclerView, progress, PopularMovies.this, data);
-                fetchMovieList_rating.execute(sortBy.RATING);
+                showTopRatedMovies();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
 
-    }
-
-    public enum sortBy {
-        POPULAR, RATING
     }
 }

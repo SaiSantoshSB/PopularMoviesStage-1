@@ -7,9 +7,6 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
 
-/**
- * Created by sai.santosh on 19/06/16.
- */
 public class PopularMoviesApiData implements Parcelable {
 
     public static final Creator<PopularMoviesApiData> CREATOR = new Creator<PopularMoviesApiData>() {

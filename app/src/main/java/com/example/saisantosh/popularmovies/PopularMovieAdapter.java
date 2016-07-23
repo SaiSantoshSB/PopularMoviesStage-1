@@ -12,6 +12,10 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 public class PopularMovieAdapter extends RecyclerView.Adapter<PopularMovieAdapter.ViewHolder> {
     private ArrayList<PopularMoviesApiData> data = new ArrayList<>();
     private Context context;
@@ -29,7 +33,7 @@ public class PopularMovieAdapter extends RecyclerView.Adapter<PopularMovieAdapte
 
     @Override
     public void onBindViewHolder(PopularMovieAdapter.ViewHolder holder, int position) {
-        Picasso.with(context).load("http://image.tmdb.org/t/p/w185/" + data.get(position).getPosterPath()).placeholder(R.drawable.noimage).into(holder.imageView);
+        Picasso.with(context).load("http://image.tmdb.org/t/p/w185/" + data.get(position).getPosterPath()).error(R.drawable.noimage).placeholder(R.drawable.loading).into(holder.imageView);
     }
 
     @Override
@@ -38,14 +42,15 @@ public class PopularMovieAdapter extends RecyclerView.Adapter<PopularMovieAdapte
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        private ImageView imageView;
+        @BindView(R.id.movie_image)
+        ImageView imageView;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            imageView = (ImageView) itemView.findViewById(R.id.movie_image);
-            imageView.setOnClickListener(this);
+            ButterKnife.bind(this, itemView);
         }
 
+        @OnClick(R.id.movie_image)
         @Override
         public void onClick(View v) {
             Intent intent = new Intent(context, PopularMoviesDetail.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
