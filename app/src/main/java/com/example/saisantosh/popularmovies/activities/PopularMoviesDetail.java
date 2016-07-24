@@ -1,4 +1,4 @@
-package com.example.saisantosh.popularmovies;
+package com.example.saisantosh.popularmovies.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.saisantosh.popularmovies.models.PopularMoviesApiData;
+import com.example.saisantosh.popularmovies.R;
 import com.squareup.picasso.Picasso;
 
 import java.text.MessageFormat;

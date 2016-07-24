@@ -1,4 +1,4 @@
-package com.example.saisantosh.popularmovies;
+package com.example.saisantosh.popularmovies.adapters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -8,6 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.example.saisantosh.popularmovies.models.PopularMoviesApiData;
+import com.example.saisantosh.popularmovies.R;
+import com.example.saisantosh.popularmovies.activities.PopularMoviesDetail;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -20,9 +23,12 @@ public class PopularMovieAdapter extends RecyclerView.Adapter<PopularMovieAdapte
     private ArrayList<PopularMoviesApiData> data = new ArrayList<>();
     private Context context;
 
-    public PopularMovieAdapter(Context context, ArrayList<PopularMoviesApiData> data) {
+    public PopularMovieAdapter(Context context) {
         this.context = context;
-        this.data = data;
+    }
+
+    public void setData(ArrayList<PopularMoviesApiData> data){
+        this.data=data;
     }
 
     @Override

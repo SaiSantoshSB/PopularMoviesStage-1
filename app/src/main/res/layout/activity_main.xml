@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@android:color/white"
     android:fitsSystemWindows="true"
-    tools:context=".PopularMovies">
+    tools:context=".activities.PopularMovies">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/movies_recycler_view"

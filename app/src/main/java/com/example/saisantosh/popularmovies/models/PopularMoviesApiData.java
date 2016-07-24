@@ -1,4 +1,4 @@
-package com.example.saisantosh.popularmovies;
+package com.example.saisantosh.popularmovies.models;
 
 import android.os.Parcel;
 import android.os.Parcelable;

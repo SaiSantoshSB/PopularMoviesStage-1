@@ -1,13 +1,20 @@
-package com.example.saisantosh.popularmovies;
+package com.example.saisantosh.popularmovies.activities;
 
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.example.saisantosh.popularmovies.api.ApiClient;
+import com.example.saisantosh.popularmovies.BuildConfig;
+import com.example.saisantosh.popularmovies.api.MoviesApi;
+import com.example.saisantosh.popularmovies.adapters.PopularMovieAdapter;
+import com.example.saisantosh.popularmovies.models.PopularMoviesApiData;
+import com.example.saisantosh.popularmovies.models.PopularMoviesResponse;
+import com.example.saisantosh.popularmovies.R;
 
 import java.util.ArrayList;
 
@@ -20,8 +27,9 @@ import retrofit2.Response;
 public class PopularMovies extends AppCompatActivity {
     @BindView(R.id.movies_recycler_view)
     RecyclerView recyclerView;
-    Context context = PopularMovies.this;
-    ApiInterface apiService;
+    private final Context context = PopularMovies.this;
+    private MoviesApi moviesApi;
+    private PopularMovieAdapter movieAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,50 +41,44 @@ public class PopularMovies extends AppCompatActivity {
             RecyclerView.LayoutManager layoutManager = new GridLayoutManager(context, 2);
             recyclerView.setLayoutManager(layoutManager);
         }
+        movieAdapter = new PopularMovieAdapter(context);
+        moviesApi = ApiClient.getClient().create(MoviesApi.class);
         showPopularMovies();
     }
 
     private void showTopRatedMovies() {
-        apiService = ApiClient.getClient().create(ApiInterface.class);
 
-        Call<PopularMoviesResponse> call = apiService.getTopRatedMovies(BuildConfig.TMDB_MAP_API_KEY);
+
+        Call<PopularMoviesResponse> call = moviesApi.getTopRatedMovies(BuildConfig.TMDB_MAP_API_KEY);
         call.enqueue(new Callback<PopularMoviesResponse>() {
             @Override
             public void onResponse(Call<PopularMoviesResponse> call, Response<PopularMoviesResponse> response) {
                 ArrayList<PopularMoviesApiData> movies = response.body().getResults();
-                Log.d("movies", "Number of movies received: " + movies.size());
-
-                PopularMovieAdapter movieAdapter = new PopularMovieAdapter(context, movies);
+                movieAdapter.setData(movies);
                 recyclerView.setAdapter(movieAdapter);
-
             }
 
             @Override
             public void onFailure(Call<PopularMoviesResponse> call, Throwable t) {
-                // Log error here since request failed
-                Log.e("movies", t.toString());
+
             }
         });
     }
 
     private void showPopularMovies() {
-        apiService = ApiClient.getClient().create(ApiInterface.class);
 
-        Call<PopularMoviesResponse> call = apiService.getPopularMovies(BuildConfig.TMDB_MAP_API_KEY);
+        Call<PopularMoviesResponse> call = moviesApi.getPopularMovies(BuildConfig.TMDB_MAP_API_KEY);
         call.enqueue(new Callback<PopularMoviesResponse>() {
             @Override
             public void onResponse(Call<PopularMoviesResponse> call, Response<PopularMoviesResponse> response) {
                 ArrayList<PopularMoviesApiData> movies = response.body().getResults();
-                Log.d("movies", "Number of movies received: " + movies.size());
-
-                PopularMovieAdapter movieAdapter = new PopularMovieAdapter(context, movies);
+                movieAdapter.setData(movies);
                 recyclerView.setAdapter(movieAdapter);
             }
 
             @Override
             public void onFailure(Call<PopularMoviesResponse> call, Throwable t) {
-                // Log error here since request failed
-                Log.e("movies", t.toString());
+
             }
         });
     }
