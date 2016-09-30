@@ -5,13 +5,12 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-public class PopularMoviesDBHelper extends SQLiteOpenHelper {
+class PopularMoviesDBHelper extends SQLiteOpenHelper {
 
-    //name & version
     private static final String DATABASE_NAME = "popularmovies.db";
     private static final int DATABASE_VERSION = 1;
 
-    public PopularMoviesDBHelper(Context context) {
+    PopularMoviesDBHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 

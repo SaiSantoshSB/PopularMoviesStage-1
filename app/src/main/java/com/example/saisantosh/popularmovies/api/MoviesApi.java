@@ -18,9 +18,6 @@ public interface MoviesApi {
     @GET("movie/popular")
     Call<PopularMoviesResponse> getPopularMovies(@Query("api_key") String apiKey);
 
-    @GET("movie/{id}")
-    Call<PopularMoviesResponse> getMovieDetails(@Path("id") int id, @Query("api_key") String apiKey);
-
     @GET("movie/{id}/videos")
     Call<PopularMoviesTrailers> getMovieTrailers(@Path("id") int id, @Query("api_key") String apiKey);
 

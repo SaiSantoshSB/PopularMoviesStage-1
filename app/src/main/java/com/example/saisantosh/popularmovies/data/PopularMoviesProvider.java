@@ -21,15 +21,10 @@ public class PopularMoviesProvider extends ContentProvider {
     private static final int MOVIE_WITH_ID = 200;
 
     private static UriMatcher buildUriMatcher() {
-        // Build a UriMatcher by adding a specific code to return based on a match
-        // It's common to use NO_MATCH as the code for this case.
         final UriMatcher matcher = new UriMatcher(UriMatcher.NO_MATCH);
         final String authority = PopularMoviesContracts.CONTENT_AUTHORITY;
-
-        // add a code for each type of URI you want
         matcher.addURI(authority, PopularMoviesContracts.PopularMoviesEntry.TABLE_FAVORITES, MOVIE);
         matcher.addURI(authority, PopularMoviesContracts.PopularMoviesEntry.TABLE_FAVORITES + "/#", MOVIE_WITH_ID);
-
         return matcher;
     }
 
@@ -44,7 +39,6 @@ public class PopularMoviesProvider extends ContentProvider {
     public Cursor query(@NonNull Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
         Cursor retCursor;
         switch (sUriMatcher.match(uri)) {
-            // All Flavors selected
             case MOVIE: {
                 retCursor = mOpenHelper.getReadableDatabase().query(
                         PopularMoviesContracts.PopularMoviesEntry.TABLE_FAVORITES,
@@ -56,7 +50,6 @@ public class PopularMoviesProvider extends ContentProvider {
                         sortOrder);
                 return retCursor;
             }
-            // Individual flavor based on Id selected
             case MOVIE_WITH_ID: {
                 retCursor = mOpenHelper.getReadableDatabase().query(
                         PopularMoviesContracts.PopularMoviesEntry.TABLE_FAVORITES,
@@ -69,7 +62,6 @@ public class PopularMoviesProvider extends ContentProvider {
                 return retCursor;
             }
             default: {
-                // By default, we assume a bad URI
                 throw new UnsupportedOperationException("Unknown uri: " + uri);
             }
         }
@@ -101,7 +93,6 @@ public class PopularMoviesProvider extends ContentProvider {
         switch (sUriMatcher.match(uri)) {
             case MOVIE: {
                 long _id = db.insert(PopularMoviesContracts.PopularMoviesEntry.TABLE_FAVORITES, null, contentValues);
-                // insert unless it is already contained in the database
                 if (_id > 0) {
                     returnUri = PopularMoviesContracts.PopularMoviesEntry.buildFlavorsUri(_id);
                 } else {
@@ -130,7 +121,6 @@ public class PopularMoviesProvider extends ContentProvider {
             case MOVIE:
                 numDeleted = db.delete(
                         PopularMoviesContracts.PopularMoviesEntry.TABLE_FAVORITES, selection, selectionArgs);
-                // reset _ID
                 db.execSQL("DELETE FROM SQLITE_SEQUENCE WHERE NAME = '" +
                         PopularMoviesContracts.PopularMoviesEntry.TABLE_FAVORITES + "'");
                 break;
@@ -138,7 +128,6 @@ public class PopularMoviesProvider extends ContentProvider {
                 numDeleted = db.delete(PopularMoviesContracts.PopularMoviesEntry.TABLE_FAVORITES,
                         PopularMoviesContracts.PopularMoviesEntry._ID + " = ?",
                         new String[]{String.valueOf(ContentUris.parseId(uri))});
-                // reset _ID
                 db.execSQL("DELETE FROM SQLITE_SEQUENCE WHERE NAME = '" +
                         PopularMoviesContracts.PopularMoviesEntry.TABLE_FAVORITES + "'");
 

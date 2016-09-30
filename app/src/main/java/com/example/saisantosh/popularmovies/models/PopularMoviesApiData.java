@@ -53,7 +53,7 @@ public class PopularMoviesApiData implements Parcelable {
 
     }
 
-    protected PopularMoviesApiData(Parcel in) {
+    private PopularMoviesApiData(Parcel in) {
         adult = in.readByte() != 0;
         backdropPath = in.readString();
         id = in.readInt();
