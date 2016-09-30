@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="C:\Users\Srinivas\AndroidStudioProjects\PopularMovies\app\build\intermediates\exploded-aar\com.android.support\design\24.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="23eb0d2998a782213b56168cbf23a0688b9111d9">
+        <dex dex="C:\Users\Srinivas\AndroidStudioProjects\PopularMovies\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-24.2.0_e9949ba92b7c549810acded4b7947d4a9ebc2ef0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Srinivas\AndroidStudioProjects\PopularMovies\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="c3c638be6e650b165ab9ae144857b64e82787fad">
+        <dex dex="C:\Users\Srinivas\AndroidStudioProjects\PopularMovies\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-24.2.0_14b64ad7894b0bd5f843058482511feda68bbd42\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Srinivas\AndroidStudioProjects\PopularMovies\app\build\intermediates\exploded-aar\com.jakewharton\butterknife\8.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="ca5e58104f56f918f0fb3a5b1b371ab599ae56b2">
+        <dex dex="C:\Users\Srinivas\AndroidStudioProjects\PopularMovies\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.jakewharton-butterknife-8.2.1_7faadb54bfcda178b8ef3050b3387fd0e2d35dc5\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Srinivas\.gradle\caches\modules-2\files-2.1\com.jakewharton\butterknife-annotations\8.2.1\d6f54d76edfbe779a50a8636b10fd3f555d8f780\butterknife-annotations-8.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="d6f54d76edfbe779a50a8636b10fd3f555d8f780">
+        <dex dex="C:\Users\Srinivas\AndroidStudioProjects\PopularMovies\app\build\intermediates\transforms\dex\debug\folders\1000\10\butterknife-annotations-8.2.1_5aaeb1fa3679ea8097b7e53eecaab3e966a7ab73\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Srinivas\AndroidStudioProjects\PopularMovies\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="f9b41622897665678d31d78e57a361cb0cebcb0d">
+        <dex dex="C:\Users\Srinivas\AndroidStudioProjects\PopularMovies\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-24.2.0_34c69b8d1a8dda59ee5661ef3366923cf09d9870\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Srinivas\AndroidStudioProjects\PopularMovies\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="beac40bcc8a320a896dd15f5109cfcaea5e1e0e3">
+        <dex dex="C:\Users\Srinivas\AndroidStudioProjects\PopularMovies\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-24.2.0_02dc0c4b5491df96eb8c884fd0f64cee4c19a70e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Srinivas\AndroidStudioProjects\PopularMovies\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\24.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="c755536e5a100d9c76c8ea0b72f76c018f7a9de2">
+        <dex dex="C:\Users\Srinivas\AndroidStudioProjects\PopularMovies\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-24.2.0_28a2019a8b450cea26e41d579ef394597d478cf7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Srinivas\AndroidStudioProjects\PopularMovies\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.0\jars\libs\internal_impl-24.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="60d7b23621d31e6f42f4f76f16af467e57a20cda">
+        <dex dex="C:\Users\Srinivas\AndroidStudioProjects\PopularMovies\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.0_88c0e7d84078a19635b8606b704668358a11becc\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Srinivas\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\24.2.0\support-annotations-24.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="6be858a75633b1f0a2d24cad740db57775cb6871">
+        <dex dex="C:\Users\Srinivas\AndroidStudioProjects\PopularMovies\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-24.2.0_451fa0f077b44317fe589c536ba66c2b8e2a98ac\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Srinivas\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\retrofit\2.1.0\2de7cd8b95b7021b1d597f049bcb422055119f2c\retrofit-2.1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="2de7cd8b95b7021b1d597f049bcb422055119f2c">
+        <dex dex="C:\Users\Srinivas\AndroidStudioProjects\PopularMovies\app\build\intermediates\transforms\dex\debug\folders\1000\10\retrofit-2.1.0_7af53ebb8bb432e3e4ee6d183ad3ab403d5866d4\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Srinivas\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="C:\Users\Srinivas\AndroidStudioProjects\PopularMovies\app\build\intermediates\transforms\dex\debug\folders\1000\10\picasso-2.5.2_1c65fe16e87bc08b98d870a69a28bf906fd1cddd\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Srinivas\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.8.0\5ea7af56cc7c567ed9856d99efb30740e9b17ff\okio-1.8.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="05ea7af56cc7c567ed9856d99efb30740e9b17ff">
+        <dex dex="C:\Users\Srinivas\AndroidStudioProjects\PopularMovies\app\build\intermediates\transforms\dex\debug\folders\1000\10\okio-1.8.0_b14f7274d3d137af3dad2157c063b7d756793359\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Srinivas\AndroidStudioProjects\PopularMovies\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.0\jars\libs\internal_impl-24.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="032a4b53def5e2ceedfc2e793b126c0163cfa1dd">
+        <dex dex="C:\Users\Srinivas\AndroidStudioProjects\PopularMovies\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.0_17fc0c93e779d9f98b663be4935792124f4a49c7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Srinivas\AndroidStudioProjects\PopularMovies\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="c84e216d9bf618464d6b9564d71d9a656433e7c4">
+        <dex dex="C:\Users\Srinivas\AndroidStudioProjects\PopularMovies\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-24.2.0_99b86830113ce2ce133224294eaf71f1b79846b5\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Srinivas\AndroidStudioProjects\PopularMovies\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.0\jars\libs\internal_impl-24.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="045be695d968dd707691cc55d23746dbf8cf569a">
+        <dex dex="C:\Users\Srinivas\AndroidStudioProjects\PopularMovies\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.0_04c780cbecfefc58d52d619708d1bced78cc9316\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Srinivas\AndroidStudioProjects\PopularMovies\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\jars\libs\internal_impl-24.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="771b3cc0e597b54da25f8086ba73180c59c6bc71">
+        <dex dex="C:\Users\Srinivas\AndroidStudioProjects\PopularMovies\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.0_8a0409efded3ecad694514efbe096055d20b6ec9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Srinivas\AndroidStudioProjects\PopularMovies\app\build\intermediates\exploded-aar\com.android.support\customtabs\24.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="f3bb74fd640171dc9bfd89d886d2463f43dac5a8">
+        <dex dex="C:\Users\Srinivas\AndroidStudioProjects\PopularMovies\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-customtabs-24.2.0_f1040b5b7cb33ee196cb4ae34465e1ab2c3f717f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Srinivas\AndroidStudioProjects\PopularMovies\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.0\jars\libs\internal_impl-24.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="6e02e34594ebe9c0501ffda8dd48497f81b82977">
+        <dex dex="C:\Users\Srinivas\AndroidStudioProjects\PopularMovies\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.0_10cdf3455158a1e78979f7a65e41770b45015cfe\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Srinivas\AndroidStudioProjects\PopularMovies\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="fead308fadcfe5012cf9f4db305a99d6b187f91d">
+        <dex dex="C:\Users\Srinivas\AndroidStudioProjects\PopularMovies\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_aa40764073c39909bd5e809d3801891c66fe220f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Srinivas\AndroidStudioProjects\PopularMovies\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="d8bd2268fdcbfd52c76ade65d9900cd8def93a44">
+        <dex dex="C:\Users\Srinivas\AndroidStudioProjects\PopularMovies\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-24.2.0_a4d7c64e910f59c504d65badcfa04afc85e596d1\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Srinivas\AndroidStudioProjects\PopularMovies\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="45f5eda279825ff470e3f51019d374d1ef61e000">
+        <dex dex="C:\Users\Srinivas\AndroidStudioProjects\PopularMovies\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-24.2.0_8494e945a51cc6a291dc39d0a11f48ebf91c38dd\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Srinivas\AndroidStudioProjects\PopularMovies\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="17766a976cb368514244a4d4141175c1f6475b78">
+        <dex dex="C:\Users\Srinivas\AndroidStudioProjects\PopularMovies\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_0ddfcf76b1b3746eed54bb77ed6e6c4147f045f5\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Srinivas\AndroidStudioProjects\PopularMovies\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="f3ee23ef25c9a8fe3d40246d0b7097267963a612">
+        <dex dex="C:\Users\Srinivas\AndroidStudioProjects\PopularMovies\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-24.2.0_17ab615fda56107e2d22ab289bd55fc8bb3820b2\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Srinivas\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.3.0\2b802460eea20f8f2ad9c08c74e0f14718e88aa9\okhttp-3.3.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="2b802460eea20f8f2ad9c08c74e0f14718e88aa9">
+        <dex dex="C:\Users\Srinivas\AndroidStudioProjects\PopularMovies\app\build\intermediates\transforms\dex\debug\folders\1000\10\okhttp-3.3.0_bf2a7d7915af44005eae5a80637c9302262222b4\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Srinivas\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.7\751f548c85fa49f330cecbb1875893f971b33c4e\gson-2.7.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="751f548c85fa49f330cecbb1875893f971b33c4e">
+        <dex dex="C:\Users\Srinivas\AndroidStudioProjects\PopularMovies\app\build\intermediates\transforms\dex\debug\folders\1000\10\gson-2.7_1ef23fe712c9d703209a94a15512b6c3b5378ccf\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Srinivas\AndroidStudioProjects\PopularMovies\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="6eb9107eb34d2fe2b020662b7fbbec991dcba846">
+        <dex dex="C:\Users\Srinivas\AndroidStudioProjects\PopularMovies\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-24.2.0_d46a956b8e8f0e9647bdaeed6ec46d274fd91b9c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Srinivas\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-gson\2.1.0\aa557d71ead91cbf26e0c316a0f593d168303309\converter-gson-2.1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="aa557d71ead91cbf26e0c316a0f593d168303309">
+        <dex dex="C:\Users\Srinivas\AndroidStudioProjects\PopularMovies\app\build\intermediates\transforms\dex\debug\folders\1000\10\converter-gson-2.1.0_88815940e5894c654eaee2b0048e006dc03e7998\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Srinivas\AndroidStudioProjects\PopularMovies\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="fcc945a86ebcbf527429acb8216ec7dae2c06417">
+        <dex dex="C:\Users\Srinivas\AndroidStudioProjects\PopularMovies\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-24.2.0_31e58113d197a42bf3b7e910609a2eb1258d727f\classes.dex" />
+    </item>
+
+</items>

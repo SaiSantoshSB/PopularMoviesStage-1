@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "C:\\Users\\Srinivas\\AndroidStudioProjects\\PopularMovies\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi\\ic_favorite_black_36dp.png",
+        "source": "C:\\Users\\Srinivas\\AndroidStudioProjects\\PopularMovies\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_favorite_black_36dp.png"
+    },
+    {
+        "merged": "C:\\Users\\Srinivas\\AndroidStudioProjects\\PopularMovies\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi\\ic_open_in_new_black_48dp.png",
+        "source": "C:\\Users\\Srinivas\\AndroidStudioProjects\\PopularMovies\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_open_in_new_black_48dp.png"
+    },
+    {
+        "merged": "C:\\Users\\Srinivas\\AndroidStudioProjects\\PopularMovies\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi\\ic_play_arrow_black_48dp.png",
+        "source": "C:\\Users\\Srinivas\\AndroidStudioProjects\\PopularMovies\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_play_arrow_black_48dp.png"
+    },
+    {
+        "merged": "C:\\Users\\Srinivas\\AndroidStudioProjects\\PopularMovies\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi\\ic_favorite_border_black_36dp.png",
+        "source": "C:\\Users\\Srinivas\\AndroidStudioProjects\\PopularMovies\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_favorite_border_black_36dp.png"
+    },
+    {
+        "merged": "C:\\Users\\Srinivas\\AndroidStudioProjects\\PopularMovies\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi\\ic_expand_less_black_36dp.png",
+        "source": "C:\\Users\\Srinivas\\AndroidStudioProjects\\PopularMovies\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_expand_less_black_36dp.png"
+    },
+    {
+        "merged": "C:\\Users\\Srinivas\\AndroidStudioProjects\\PopularMovies\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi\\ic_expand_more_black_36dp.png",
+        "source": "C:\\Users\\Srinivas\\AndroidStudioProjects\\PopularMovies\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_expand_more_black_36dp.png"
+    }
+]

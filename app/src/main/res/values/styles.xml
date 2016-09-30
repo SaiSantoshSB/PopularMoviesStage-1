@@ -8,7 +8,6 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
@@ -18,5 +17,10 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="ToolBarStyle" parent="Theme.AppCompat">
+        <item name="android:textColorPrimary">@color/lighter_black</item>
+        <item name="android:textColorSecondary">@color/lighter_black</item>
+        <item name="actionMenuTextColor">@color/lighter_black</item>
+    </style>
 
 </resources>

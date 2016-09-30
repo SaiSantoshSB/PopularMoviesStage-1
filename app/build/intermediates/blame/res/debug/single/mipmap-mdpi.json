@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "C:\\Users\\Srinivas\\AndroidStudioProjects\\PopularMovies\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\ic_launcher.png",
+        "source": "C:\\Users\\Srinivas\\AndroidStudioProjects\\PopularMovies\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Srinivas\\AndroidStudioProjects\\PopularMovies\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\movies.png",
+        "source": "C:\\Users\\Srinivas\\AndroidStudioProjects\\PopularMovies\\app\\src\\main\\res\\mipmap-mdpi\\movies.png"
+    }
+]

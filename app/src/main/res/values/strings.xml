@@ -13,4 +13,8 @@
     <string name="sort_by_rating">Sort by Rating</string>
     <string name="overview">Overview</string>
     <string name="title_of_the_film">Title of the Film</string>
+    <string name="favorite">Favorites</string>
+    <string name="trailers">Trailers</string>
+    <string name="content_authority">com.example.saisantosh.popularmovies.app</string>
+    <string name="reviews">Reviews</string>
 </resources>
