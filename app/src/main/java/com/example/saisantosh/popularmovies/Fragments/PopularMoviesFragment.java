@@ -1,11 +1,12 @@
-package com.example.saisantosh.popularmovies.Fragments;
+package com.example.saisantosh.popularmovies.fragments;
 
-import android.app.Fragment;
+
 import android.content.Context;
 import android.content.res.Configuration;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -14,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.saisantosh.popularmovies.BuildConfig;
 import com.example.saisantosh.popularmovies.R;
@@ -45,11 +47,15 @@ public class PopularMoviesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_popular_movies, container, false);
         context = getActivity();
+        boolean mTwoPane = getArguments().getBoolean("mTwoPane");
         ButterKnife.bind(this, view);
+        if (savedInstanceState != null) {
+            moviesApiData = savedInstanceState.getParcelableArrayList("movieData");
+        }
         if (recyclerView != null) {
             recyclerView.setHasFixedSize(true);
             setLayoutManager(getActivity().getResources().getConfiguration().orientation);
-            movieAdapter = new PopularMovieAdapter(context);
+            movieAdapter = new PopularMovieAdapter(context, mTwoPane);
             if (moviesApiData.size() == 0) {
                 showPopularMovies();
             } else {
@@ -73,6 +79,13 @@ public class PopularMoviesFragment extends Fragment {
                 break;
         }
     }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        outState.putParcelableArrayList("moviesData", moviesApiData);
+        super.onSaveInstanceState(outState);
+    }
+
 
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
@@ -146,7 +159,7 @@ public class PopularMoviesFragment extends Fragment {
     private void showFavoriteMovies() {
         String[] projection = new String[]{PopularMoviesContracts.PopularMoviesEntry.DATA};
         Cursor cursor = context.getContentResolver().query(PopularMoviesContracts.PopularMoviesEntry.CONTENT_URI, projection, null, null, null);
-        if (cursor != null) {
+        if (cursor != null && cursor.getCount() > 0) {
             cursor.moveToFirst();
             moviesApiData.clear();
             do {
@@ -155,7 +168,9 @@ public class PopularMoviesFragment extends Fragment {
             movieAdapter.setData(moviesApiData);
             recyclerView.setAdapter(movieAdapter);
             cursor.close();
-
+        } else {
+            Toast.makeText(getActivity(), "No favorite movies", Toast.LENGTH_LONG).show();
         }
     }
+
 }

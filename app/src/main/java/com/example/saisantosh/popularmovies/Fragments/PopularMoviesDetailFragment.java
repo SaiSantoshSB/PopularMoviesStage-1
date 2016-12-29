@@ -1,17 +1,16 @@
-package com.example.saisantosh.popularmovies.Fragments;
+package com.example.saisantosh.popularmovies.fragments;
 
-import android.app.Fragment;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.customtabs.CustomTabsIntent;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -21,17 +20,17 @@ import android.widget.Toast;
 
 import com.example.saisantosh.popularmovies.BuildConfig;
 import com.example.saisantosh.popularmovies.R;
-import com.example.saisantosh.popularmovies.activities.PopularMoviesActivity;
+import com.example.saisantosh.popularmovies.activities.BaseAcitivty;
 import com.example.saisantosh.popularmovies.data.PopularMoviesContracts;
 import com.example.saisantosh.popularmovies.models.PopularMoviesApiData;
 import com.example.saisantosh.popularmovies.models.PopularMoviesReviews;
 import com.example.saisantosh.popularmovies.models.PopularMoviesTrailers;
-import com.google.android.youtube.player.YouTubeStandalonePlayer;
 import com.google.gson.Gson;
 import com.squareup.picasso.Picasso;
 
 import java.text.MessageFormat;
 import java.util.ArrayList;
+import java.util.concurrent.ExecutionException;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -71,7 +70,15 @@ public class PopularMoviesDetailFragment extends Fragment implements View.OnClic
         View view = inflater.inflate(R.layout.fragment_popular_movies_detail, container, false);
         context = getActivity();
         ButterKnife.bind(this, view);
-        data = getArguments().getParcelable("data");
+        if (savedInstanceState != null) {
+            data = savedInstanceState.getParcelable("movieData");
+        } else {
+            if (getArguments() != null && getArguments().getParcelable("data") != null) {
+                data = getArguments().getParcelable("data");
+            } else {
+                return null;
+            }
+        }
         if (data != null) {
             if (movieTitle != null) {
                 movieTitle.setText(data.getOriginalTitle());
@@ -103,30 +110,23 @@ public class PopularMoviesDetailFragment extends Fragment implements View.OnClic
                 showTrailers.setOnClickListener(this);
             }
             if (favorite != null) {
-                Cursor cursor = context.getContentResolver().query(PopularMoviesContracts.PopularMoviesEntry.CONTENT_URI, null, "movieID = ?", new String[]{String.valueOf(data.getId())}, null);
-                if (cursor != null && cursor.getCount() == 1) {
-                    favorite.setSelected(true);
-                    cursor.close();
+                ReadFromFavDB fromFavDB = new ReadFromFavDB();
+                try {
+                    if (fromFavDB.execute().get()) {
+                        favorite.setSelected(true);
+                    }
+                    favorite.setOnClickListener(this);
+                } catch (InterruptedException | ExecutionException e) {
+                    e.printStackTrace();
                 }
-                favorite.setOnClickListener(this);
             }
         }
         setHasOptionsMenu(true);
         return view;
     }
 
-    @Override
-    public void onPrepareOptionsMenu(Menu menu) {
-        menu.clear();
-        AppCompatActivity parentActivity = (AppCompatActivity) context;
-        if (parentActivity != null && parentActivity.getSupportActionBar() != null) {
-            parentActivity.getSupportActionBar().setHomeButtonEnabled(true);
-            parentActivity.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        }
-    }
-
     private void loadReviews() {
-        ((PopularMoviesActivity) context).getMoviesApi().getMovieReviews(data.getId(), BuildConfig.TMDB_MAP_API_KEY).enqueue(new Callback<PopularMoviesReviews>() {
+        ((BaseAcitivty) context).getMoviesApi().getMovieReviews(data.getId(), BuildConfig.TMDB_MAP_API_KEY).enqueue(new Callback<PopularMoviesReviews>() {
             @Override
             public void onResponse(Call<PopularMoviesReviews> call, Response<PopularMoviesReviews> response) {
                 final ArrayList<PopularMoviesReviews.PopularMoviesReviewsData> moviesReviews = response.body().getReviews();
@@ -160,13 +160,13 @@ public class PopularMoviesDetailFragment extends Fragment implements View.OnClic
 
             @Override
             public void onFailure(Call<PopularMoviesReviews> call, Throwable t) {
-
+                Toast.makeText(context, "Cannot load reviews", Toast.LENGTH_SHORT).show();
             }
         });
     }
 
     private void loadTrailers() {
-        ((PopularMoviesActivity) context).getMoviesApi().getMovieTrailers(data.getId(), BuildConfig.TMDB_MAP_API_KEY).enqueue(new Callback<PopularMoviesTrailers>() {
+        ((BaseAcitivty) context).getMoviesApi().getMovieTrailers(data.getId(), BuildConfig.TMDB_MAP_API_KEY).enqueue(new Callback<PopularMoviesTrailers>() {
             @Override
             public void onResponse(Call<PopularMoviesTrailers> call, Response<PopularMoviesTrailers> response) {
                 final ArrayList<PopularMoviesTrailers.PopularMoviesTrailersData> moviesTrailers = response.body().getResults();
@@ -182,8 +182,7 @@ public class PopularMoviesDetailFragment extends Fragment implements View.OnClic
                         view.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
-                                Intent intent1 = YouTubeStandalonePlayer.createVideoIntent(getActivity(), BuildConfig.YOUTUBE_API_KEY, moviesTrailers.get((Integer) view.getTag()).getKey(), 0, true, true);
-                                startActivity(intent1);
+                                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=" + moviesTrailers.get((Integer) view.getTag()).getKey())));
                             }
                         });
                         trailers.addView(view);
@@ -194,7 +193,7 @@ public class PopularMoviesDetailFragment extends Fragment implements View.OnClic
 
             @Override
             public void onFailure(Call<PopularMoviesTrailers> call, Throwable t) {
-                Toast.makeText(context, "error", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "Cannot load trailers", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -214,13 +213,12 @@ public class PopularMoviesDetailFragment extends Fragment implements View.OnClic
             case R.id.add_as_favorite:
                 if (favorite.isSelected()) {
                     favorite.setSelected(false);
-                    context.getContentResolver().delete(PopularMoviesContracts.PopularMoviesEntry.CONTENT_URI, "movieID = ?", new String[]{String.valueOf(data.getId())});
+                    DeleteFromFavDB deleteFromFavDB = new DeleteFromFavDB();
+                    deleteFromFavDB.execute();
                 } else {
                     favorite.setSelected(true);
-                    ContentValues contentValues = new ContentValues();
-                    contentValues.put(PopularMoviesContracts.PopularMoviesEntry.MOVIE_ID, data.getId());
-                    contentValues.put(PopularMoviesContracts.PopularMoviesEntry.DATA, new Gson().toJson(data));
-                    context.getContentResolver().insert(PopularMoviesContracts.PopularMoviesEntry.CONTENT_URI, contentValues);
+                    WriteToFavDB toFavDB = new WriteToFavDB();
+                    toFavDB.execute();
                 }
                 break;
         }
@@ -233,6 +231,46 @@ public class PopularMoviesDetailFragment extends Fragment implements View.OnClic
         } else if (view.getVisibility() == View.VISIBLE) {
             view.setVisibility(View.GONE);
             imageView.setImageDrawable(getResources().getDrawable(R.drawable.ic_expand_more_black_36dp));
+        }
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        outState.putParcelable("movieData", data);
+        super.onSaveInstanceState(outState);
+    }
+
+    private class WriteToFavDB extends AsyncTask<Void, Void, Void> {
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+            ContentValues contentValues = new ContentValues();
+            contentValues.put(PopularMoviesContracts.PopularMoviesEntry.MOVIE_ID, data.getId());
+            contentValues.put(PopularMoviesContracts.PopularMoviesEntry.DATA, new Gson().toJson(data));
+            context.getContentResolver().insert(PopularMoviesContracts.PopularMoviesEntry.CONTENT_URI, contentValues);
+            return null;
+        }
+    }
+
+    private class ReadFromFavDB extends AsyncTask<Void, Void, Boolean> {
+
+        @Override
+        protected Boolean doInBackground(Void... voids) {
+            Cursor cursor = context.getContentResolver().query(PopularMoviesContracts.PopularMoviesEntry.CONTENT_URI, null, "movieID = ?", new String[]{String.valueOf(data.getId())}, null);
+            if (cursor != null && cursor.getCount() == 1) {
+                cursor.close();
+                return true;
+            }
+            return false;
+        }
+    }
+
+    private class DeleteFromFavDB extends AsyncTask<Void, Void, Void> {
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+            context.getContentResolver().delete(PopularMoviesContracts.PopularMoviesEntry.CONTENT_URI, "movieID = ?", new String[]{String.valueOf(data.getId())});
+            return null;
         }
     }
 }
