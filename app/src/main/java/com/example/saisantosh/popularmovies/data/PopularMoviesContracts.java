@@ -13,14 +13,11 @@ public class PopularMoviesContracts {
     private static final Uri BASE_CONTENT_URI = Uri.parse("content://" + CONTENT_AUTHORITY);
 
     public static final class PopularMoviesEntry implements BaseColumns {
-        static final String TABLE_FAVORITES = "favorites";
-
-        static final String _ID = "_id";
         public static final String DATA = "moviedata";
         public static final String MOVIE_ID = "movieID";
-
+        static final String TABLE_FAVORITES = "favorites";
         public static final Uri CONTENT_URI = BASE_CONTENT_URI.buildUpon().appendPath(TABLE_FAVORITES).build();
-
+        static final String _ID = "_id";
         static final String CONTENT_DIR_TYPE =
                 ContentResolver.CURSOR_DIR_BASE_TYPE + "/" + CONTENT_AUTHORITY + "/" + TABLE_FAVORITES;
         static final String CONTENT_ITEM_TYPE =
